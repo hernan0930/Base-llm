@@ -37,6 +37,7 @@ tokenizer = tiktoken.get_encoding("gpt2")
 
 train_loader = create_dataloader_v1(
     train_data,
+    tokenizer=tokenizer,
     batch_size=2,
     max_length=GPT_CONFIG_124M["context_length"],
     stride=GPT_CONFIG_124M["context_length"],
@@ -47,6 +48,7 @@ train_loader = create_dataloader_v1(
 
 val_loader = create_dataloader_v1(
     val_data,
+    tokenizer=tokenizer,
     batch_size=2,
     max_length=GPT_CONFIG_124M["context_length"],
     stride=GPT_CONFIG_124M["context_length"],
